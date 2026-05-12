@@ -1,0 +1,123 @@
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                    RENDER DEPLOYMENT - QUICK CHECKLIST                       ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 1: PREPARE                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+  ☐ Get Groq API key from: https://console.groq.com
+  ☐ Push code to GitHub: git push origin main
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 2: CREATE SERVICE ON RENDER                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+  ☐ Go to: https://dashboard.render.com
+  ☐ Click: "New +" → "Web Service"
+  ☐ Connect repository: Kisalay07/shl-assessment-agent
+  ☐ Verify "Blueprint detected" message appears
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 3: VERIFY FORM SETTINGS                                                │
+└──────────────────────────────────────────────────────────────────────────────┘
+  
+  Name:                 shl-assessment-agent-1
+  
+  Root Directory:       shl-agent                    ⚠️ CRITICAL - MUST BE SET!
+  
+  Language:             Python 3
+  
+  Branch:               main
+  
+  Region:               Virginia (US East) or Oregon
+  
+  Build Command:        bash render-build.sh         ⚠️ CRITICAL - EXACT COMMAND!
+  
+  Start Command:        uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
+  
+  Plan:                 Free
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 4: ADD ENVIRONMENT VARIABLE                                            │
+└──────────────────────────────────────────────────────────────────────────────┘
+  ☐ Click "Environment" tab
+  ☐ Add variable:
+      Key:   GROQ_API_KEY
+      Value: gsk_...                                 ⚠️ YOUR ACTUAL API KEY!
+  ☐ Click "Save Changes"
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 5: DEPLOY                                                              │
+└──────────────────────────────────────────────────────────────────────────────┘
+  ☐ Click "Create Web Service"
+  ☐ Wait 2-3 minutes for build
+  ☐ Watch logs for: "✅ Ready — XXX assessments indexed."
+
+┌──────────────────────────────────────────────────────────────────────────────┐
+│ STEP 6: VERIFY DEPLOYMENT                                                   │
+└──────────────────────────────────────────────────────────────────────────────┘
+  ☐ Test health endpoint:
+      curl https://your-service.onrender.com/health
+      Expected: {"status":"ok","catalog_items":XXX}
+  
+  ☐ Visit API docs:
+      https://your-service.onrender.com/docs
+  
+  ☐ Test root endpoint:
+      curl https://your-service.onrender.com/
+      Expected: Service info with version 2.0.0
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                           CRITICAL SETTINGS                                  ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  1. Root Directory = "shl-agent"
+     Without this, Render won't find your files!
+
+  2. Build Command = "bash render-build.sh"
+     This script handles all build dependencies correctly!
+
+  3. GROQ_API_KEY environment variable
+     Service won't start without this!
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         TROUBLESHOOTING GUIDE                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  Problem: "File not found" errors
+  Solution: Set Root Directory to "shl-agent"
+
+  Problem: "GROQ_API_KEY not found"
+  Solution: Add GROQ_API_KEY in Environment tab
+
+  Problem: Build fails with "metadata-generation-failed"
+  Solution: Ensure Build Command is "bash render-build.sh"
+
+  Problem: Service shows 503 error
+  Solution: Wait 10-15 seconds, check logs, verify GROQ_API_KEY
+
+  Problem: Service spins down after 15 minutes
+  Solution: This is normal on free tier. Upgrade to Starter ($7/mo) for always-on
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                            SUCCESS INDICATORS                                ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  ✅ Logs show: "✅ Ready — XXX assessments indexed."
+  ✅ /health returns: {"status":"ok","catalog_items":XXX}
+  ✅ /docs page loads successfully
+  ✅ No errors in logs
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                              HELPFUL LINKS                                   ║
+╚══════════════════════════════════════════════════════════════════════════════╝
+
+  📖 Detailed Guide:     RENDER_DEPLOYMENT.md
+  📋 Form Reference:     RENDER_FORM_GUIDE.md
+  🔧 Render Dashboard:   https://dashboard.render.com
+  🔑 Get Groq API Key:   https://console.groq.com
+  📚 Render Docs:        https://render.com/docs
+  🐛 Report Issues:      https://github.com/Kisalay07/shl-assessment-agent/issues
+
+╔══════════════════════════════════════════════════════════════════════════════╗
+║                         DEPLOYMENT COMPLETE! 🎉                              ║
+╚══════════════════════════════════════════════════════════════════════════════╝
