@@ -59,10 +59,46 @@ python eval.py --trace traces/trace_C1_leadership.json
 
 ## Deploy to Render (free)
 
-1. Push to GitHub.
-2. New Web Service → point at repo → Render auto-detects `render.yaml`.
-3. Set `GROQ_API_KEY` in Render dashboard → Environment.
-4. Deploy. `/health` returns `{"status":"ok"}` in ~5 s.
+### Quick Deploy (Recommended)
+
+1. **Push to GitHub**
+   ```bash
+   git push origin main
+   ```
+
+2. **Create Web Service on Render**
+   - Go to [Render Dashboard](https://dashboard.render.com/)
+   - Click "New +" → "Web Service"
+   - Connect your repository
+   - Render auto-detects `render.yaml` configuration
+
+3. **Set Environment Variable**
+   - In Render dashboard → Environment tab
+   - Add: `GROQ_API_KEY` = `gsk_...` (your key from https://console.groq.com)
+   - Click "Save Changes"
+
+4. **Deploy**
+   - Click "Create Web Service"
+   - Wait ~2-3 minutes for build
+   - Service will be available at `https://your-service.onrender.com`
+
+5. **Verify**
+   ```bash
+   curl https://your-service.onrender.com/health
+   # Expected: {"status":"ok","catalog_items":XXX}
+   ```
+
+📖 **Detailed guide**: See [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md) for troubleshooting and advanced configuration.
+
+### Manual Configuration
+
+If auto-detection fails, use these settings:
+
+| Field | Value |
+|-------|-------|
+| Root Directory | `shl-agent` |
+| Build Command | `bash render-build.sh` |
+| Start Command | `uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1` |
 
 ## Deploy with Docker
 

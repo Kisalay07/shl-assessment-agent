@@ -4,7 +4,8 @@ services:
     env: python
     region: oregon
     plan: free
-    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt
+    rootDir: shl-agent
+    buildCommand: bash render-build.sh
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT --workers 1
     healthCheckPath: /health
     envVars:
@@ -18,3 +19,5 @@ services:
         value: "1400"
       - key: LLM_TEMPERATURE
         value: "0.05"
+      - key: PYTHONUNBUFFERED
+        value: "1"
