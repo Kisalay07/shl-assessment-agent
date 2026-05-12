@@ -1,0 +1,17 @@
+{
+  "persona": "Office manager needing to quickly screen admin assistants who use Excel and Word daily.",
+  "facts": {
+    "role": "Admin assistant",
+    "seniority": "General / office",
+    "tools": "Excel and Word daily",
+    "preference": "Simulation preferred (to capture capabilities)"
+  },
+  "opening": "I need to quickly screen admin assistants for Excel and Word daily.",
+  "expected": [
+    "Microsoft Excel 365 - Essentials (New)",
+    "Microsoft Word 365 (New)",
+    "MS Excel (New)",
+    "MS Word (New)",
+    "Occupational Personality Questionnaire OPQ32r"
+  ]
+}

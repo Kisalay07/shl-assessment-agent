@@ -1,0 +1,16 @@
+{
+  "persona": "VP People at a company undergoing restructuring. Re-skilling the Sales organization via an annual talent audit.",
+  "facts": {
+    "role": "Sales organization \u2014 individual contributors and first-line managers",
+    "purpose": "Development and re-skilling (talent audit)",
+    "needs": "Skills assessment, personality, sales-specific reporting, digital selling behaviours"
+  },
+  "opening": "As part of our restructuring and annual talent audit, we need to re-skill our Sales organization. What solutions do you recommend?",
+  "expected": [
+    "Global Skills Assessment",
+    "Global Skills Development Report",
+    "Occupational Personality Questionnaire OPQ32r",
+    "OPQ MQ Sales Report",
+    "Sales Transformation 2.0 - Individual Contributor"
+  ]
+}

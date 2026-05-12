@@ -1,0 +1,17 @@
+{
+  "persona": "HR manager hiring graduate financial analysts, final-year students, no work experience.",
+  "facts": {
+    "role": "Graduate financial analyst",
+    "seniority": "Graduate, final-year students, no work experience",
+    "purpose": "Selection",
+    "needs": "Numerical reasoning, finance knowledge test, situational judgement"
+  },
+  "opening": "Hiring graduate financial analysts \u2014 final-year students, no work experience. We need numerical reasoning and a finance knowledge test.",
+  "expected": [
+    "SHL Verify Interactive \u2013 Numerical Reasoning",
+    "Financial Accounting (New)",
+    "Basic Statistics (New)",
+    "Graduate Scenarios",
+    "Occupational Personality Questionnaire OPQ32r"
+  ]
+}

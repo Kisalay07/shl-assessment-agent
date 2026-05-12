@@ -1,0 +1,21 @@
+{
+  "persona": "Engineering manager filling a Senior Full-Stack Engineer role. Backend-leaning (Java/Spring/SQL primary, Angular review only). Senior IC.",
+  "facts": {
+    "role": "Senior Full-Stack Engineer \u2014 backend-leaning",
+    "seniority": "Senior IC (5+ years)",
+    "primary_skills": "Core Java, Spring, SQL",
+    "secondary_skills": "Angular (review only), AWS, Docker",
+    "purpose": "Selection",
+    "dropped": "RESTful Web Services \u2014 signal covered by Spring + interview"
+  },
+  "opening": "Here's the JD for an engineer we need to fill. Can you recommend an assessment battery?\n\n\"Senior Full-Stack Engineer \u2014 5+ years across Core Java, Spring, REST API design, Angular, SQL/relational databases, AWS deployment, and Docker. Will own end-to-end microservice delivery, contribute to architectural decisions, and mentor mid-level engineers. Strong CI/CD and cloud-native experience required.\"",
+  "expected": [
+    "Core Java (Advanced Level) (New)",
+    "Spring (New)",
+    "SQL (New)",
+    "Amazon Web Services (AWS) Development (New)",
+    "Docker (New)",
+    "SHL Verify Interactive G+",
+    "Occupational Personality Questionnaire OPQ32r"
+  ]
+}

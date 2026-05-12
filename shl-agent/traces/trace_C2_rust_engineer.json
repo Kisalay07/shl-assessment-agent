@@ -1,0 +1,17 @@
+{
+  "persona": "Engineering manager hiring a senior Rust engineer for high-performance networking infrastructure.",
+  "facts": {
+    "role": "Senior Rust engineer, high-performance networking infrastructure",
+    "seniority": "Senior IC",
+    "purpose": "Selection",
+    "note": "No Rust-specific test exists in the catalog; closest are Linux Programming, Networking, and Live Coding"
+  },
+  "opening": "I'm hiring a senior Rust engineer for high-performance networking infrastructure. What assessments should I use?",
+  "expected": [
+    "Smart Interview Live Coding",
+    "Linux Programming (General)",
+    "Networking and Implementation (New)",
+    "SHL Verify Interactive G+",
+    "Occupational Personality Questionnaire OPQ32r"
+  ]
+}

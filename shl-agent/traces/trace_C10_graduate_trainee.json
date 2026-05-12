@@ -1,0 +1,14 @@
+{
+  "persona": "L&D manager running a graduate management trainee scheme. Needs cognitive, personality, and SJT battery.",
+  "facts": {
+    "role": "Graduate management trainee",
+    "seniority": "Graduate",
+    "purpose": "Selection",
+    "needs": "Cognitive, personality (OPQ dropped on user request), situational judgement"
+  },
+  "opening": "We run a graduate management trainee scheme. We need a full battery \u2014 cognitive, personality, and situational judgement. All recent graduates.",
+  "expected": [
+    "SHL Verify Interactive G+",
+    "Graduate Scenarios"
+  ]
+}
